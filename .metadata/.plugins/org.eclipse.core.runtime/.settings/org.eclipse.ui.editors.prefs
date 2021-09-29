@@ -1,0 +1,4 @@
+AbstractTextEditor.Color.Foreground=255,255,255
+AbstractTextEditor.Color.Foreground.SystemDefault=false
+STS4BootMarkerIndicationColor=219,236,207
+eclipse.preferences.version=1

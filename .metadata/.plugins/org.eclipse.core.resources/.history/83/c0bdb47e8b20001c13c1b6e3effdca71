@@ -1,0 +1,8 @@
+spring.jpa.hibernate.ddl-auto=update
+spring.datasource.url=jdbc:mysql://localhost:3306/db_blog_pessoal?createDatabaseIfNotExist=true&serverTimezone=America/Sao_Paulo
+spring.datasource.username=root
+spring.datasource.password=102030
+spring.jpa.show-sql=true
+
+logging.level.org.hibernate.SQL=DEBUG
+logging.level.org.hibernate.type.descriptor.sql.BasicBinder=TRACE
