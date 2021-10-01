@@ -3,13 +3,16 @@
 ```sh
 - Blog Application - Spring boot/Rest API
 ```
+##### Aplicação realizada durante o bootcamp [Generation Brazil](https://brazil.generation.org/)
 
-Dependencies: <br>
-• Spring boot<br>
-• Spring-boot-starter-data-jpa<br>
-• Spring-boot-starter-validation<br>
-• Spring-boot-devtools<br>
-• Mysql-connector-java<br>
+#### Framework
+* Spring
+#### Dependencies
 
+- Spring boot web
+- Spring boot Starter Data Jpa
+- Spring boot starter validation
+- Spring boot devtools
+- Mysql connector java
 
-### working on it.. 
+### working on it..
