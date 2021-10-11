@@ -14,7 +14,7 @@ import com.paulogrillo.blog.repository.UsuarioRepository;
 
 @Service
 public class UsuarioService {
-	
+
 	@Autowired
 	private UsuarioRepository repository;
 
@@ -49,5 +49,6 @@ public class UsuarioService {
 		}
 		return null;
 	}
+
 
 }

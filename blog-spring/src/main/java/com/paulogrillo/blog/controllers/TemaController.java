@@ -20,7 +20,7 @@ import com.paulogrillo.blog.repository.TemaRepository;
 
 @RestController
 @CrossOrigin(origins = "*", allowedHeaders = "*")
-@RequestMapping("/tema")
+@RequestMapping("/temas")
 public class TemaController {
 	
 	@Autowired

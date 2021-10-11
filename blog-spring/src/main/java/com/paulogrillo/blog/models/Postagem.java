@@ -3,13 +3,11 @@ package com.paulogrillo.blog.models;
 
 import java.util.Date;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -19,8 +17,8 @@ import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+
 @Entity
-//Table = nomeia a tabela no banco.
 @Table(name = "tb_post")
 public class Postagem {
 
@@ -40,9 +38,10 @@ public class Postagem {
     private Date data = new java.sql.Date(System.currentTimeMillis());
 	
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "tema_id")
-	@JsonIgnoreProperties("tb_post")
 	private Tema tema;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	private Usuario usuario;
 
 	public long getId() {
 		return id;
@@ -83,6 +82,16 @@ public class Postagem {
 	public void setTema(Tema tema) {
 		this.tema = tema;
 	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+	
+	
 
 	
 }

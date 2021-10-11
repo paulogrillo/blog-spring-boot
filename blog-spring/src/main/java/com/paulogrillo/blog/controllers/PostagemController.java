@@ -22,6 +22,7 @@ import com.paulogrillo.blog.repository.PostagemRepository;
 @RequestMapping("/feed")
 @CrossOrigin(origins = "*",allowedHeaders = "*" )
 public class PostagemController {
+	
 	@Autowired
 	private PostagemRepository repository;
 	

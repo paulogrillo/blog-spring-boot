@@ -13,7 +13,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
+@JsonIgnoreProperties("hibernateLazyInitializer")
 @Entity
 @Table(name = "tb_tema")
 public class Tema {
@@ -22,7 +22,6 @@ public class Tema {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	
 	@NotNull
 	@Column(name = "descricao")
 	private String descricao;
@@ -30,8 +29,9 @@ public class Tema {
 	@OneToMany(mappedBy = "tema", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties("tema")
 	private List<Postagem> postagem;
+	
 
-	public long getId(){
+	public long getId() {
 		return id;
 	}
 
@@ -54,6 +54,7 @@ public class Tema {
 	public void setPostagem(List<Postagem> postagem) {
 		this.postagem = postagem;
 	}
+
 
 
 }
