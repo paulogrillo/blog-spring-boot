@@ -1,4 +1,4 @@
-package Controllers;
+package com.paulogrilo.controllers;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -40,26 +40,26 @@ public class UsuarioControllerTest {
 
 	@BeforeAll
 	public void start(){
-	LocalDate dataAdmin = LocalDate.parse("1990-07-22",
-	DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-	usuarioAdmin = new Usuario(0L, "Administrador",
-	"admin@email.com.br", "admin123", dataAdmin);
+
+	usuarioAdmin = new Usuario(
+		1, 
+		"Administrador",
+		"admin@email.com.br", 
+		"admin123");
+	
 	
 	if(!usuarioRepository.findByUsuario(usuarioAdmin.getUsuario()).isPresent()) {
-		
+
 		HttpEntity <Usuario> request = new HttpEntity<Usuario>(usuarioAdmin);
-		testRestTemplate
-		.exchange("/usuarios/cadastrar", HttpMethod.POST, request, Usuario.class);
+		testRestTemplate.exchange("/usuarios/cadastrar", HttpMethod.POST, request, Usuario.class);
 	
 	
-		LocalDate dataPost = LocalDate.parse("2000-07-22",
-		DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-		usuario = new Usuario(0L, "Paulo Antunes",
-		"paulo@email.com.br", "13465278", dataPost);
-		LocalDate dataPut = LocalDate.parse("2000-07-22",
-		DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-		usuarioUpdate = new Usuario(2L, "Paulo Antunes de Souza",
-		"paulo_souza@email.com.br", "souza123", dataPut);
+
+		usuario = new Usuario(1, "Paulo Antunes",
+		"paulo@email.com.br", "13465278");
+
+		usuarioUpdate = new Usuario(2, "Paulo Antunes de Souza",
+		"paulo_souza@email.com.br", "souza123");
 		}
 	}
 	

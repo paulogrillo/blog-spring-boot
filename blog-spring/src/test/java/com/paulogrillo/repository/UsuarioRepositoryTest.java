@@ -1,10 +1,11 @@
-package Repository;
+package com.paulogrillo.repository;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
@@ -18,8 +19,6 @@ import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import com.paulogrillo.blog.models.Usuario;
 import com.paulogrillo.blog.repository.UsuarioRepository;
 
-import antlr.collections.List;
-
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class UsuarioRepositoryTest {
@@ -29,21 +28,20 @@ public class UsuarioRepositoryTest {
 
 	@BeforeAll
 	void start() {
-		LocalDate data = LocalDate.parse("2000-07-22", DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-		Usuario usuario = new Usuario(0, "João da Silva", "joao@email.com.br", "13465278", data);
+		Usuario usuario = new Usuario(0, "João da Silva", "joao@email.com.br", "13465278");
 		
 		if (!usuarioRepository.findByUsuario(usuario.getUsuario()).isPresent())
 			usuarioRepository.save(usuario);
 		
-		usuario = new Usuario(0, "Manuel da Silva", "manuel@email.com.br", "13465278", data);
+		usuario = new Usuario(0, "Manuel da Silva", "manuel@email.com.br", "13465278");
 		if (!usuarioRepository.findByUsuario(usuario.getUsuario()).isPresent())
 			usuarioRepository.save(usuario);
 		
-		usuario = new Usuario(0, "Frederico da Silva", "frederico@email.com.br", "13465278", data);
+		usuario = new Usuario(0, "Frederico da Silva", "frederico@email.com.br", "13465278");
 		if (!usuarioRepository.findByUsuario(usuario.getUsuario()).isPresent())
 			usuarioRepository.save(usuario);
 		
-		usuario = new Usuario(0, "Paulo Antunes", "paulo@email.com.br", "13465278", data);
+		usuario = new Usuario(0, "Paulo Antunes", "paulo@email.com.br", "13465278");
 		if (!usuarioRepository.findByUsuario(usuario.getUsuario()).isPresent())
 			usuarioRepository.save(usuario);
 	}

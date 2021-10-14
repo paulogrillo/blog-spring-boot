@@ -1,4 +1,4 @@
-package Models;
+package com.paulogrillo.models;
 
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -25,14 +25,15 @@ import com.paulogrillo.blog.models.Usuario;
 public class UsuarioTest {
 	public Usuario usuario;
 	public Usuario usuarioNulo = new Usuario();
+	
 	@Autowired
 	private ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
 	Validator validator = factory.getValidator();
 
 	@BeforeEach
 	public void start() {
-		LocalDate data = LocalDate.parse("2000-07-22", DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-		usuario = new Usuario(0L, "João da Silva", "joao@email.com.br", "13465278", data);
+
+		usuario = new Usuario(0L, "João da Silva", "joao@email.com.br", "13465278");
 	}
 
 	@Test
