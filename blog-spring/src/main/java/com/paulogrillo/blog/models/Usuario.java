@@ -34,6 +34,10 @@ public class Usuario {
 	@Size(min = 5)
 	private String senha;
 	
+	private String foto;
+	
+	private String tipo;
+	
 	@NotNull
 	@ApiModelProperty(example = "email@email.com.br")
 	@NotNull(message = "O atributo Usuário é Obrigatório!")
@@ -45,10 +49,7 @@ public class Usuario {
 	 @JsonIgnoreProperties("usuario")
 	 private List<Postagem> post;
 	 
-	 
 
-	 
-	 
 	public Usuario() {
 	}
 	 
@@ -89,6 +90,30 @@ public class Usuario {
 
 	public void setSenha(String senha) {
 		this.senha = senha;
+	}
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
+	public List<Postagem> getPost() {
+		return post;
+	}
+
+	public void setPost(List<Postagem> post) {
+		this.post = post;
 	}
 	
 
